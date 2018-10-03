@@ -1,32 +1,37 @@
 {
-  "name": "web-maker-react",
-  "version": "1.0.0",
-  "description": "Web maker build with MERN stack",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shiyu3169/web-maker-react.git"
-  },
-  "author": "Shiyu Wang",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shiyu3169/web-maker-react/issues"
-  },
-  "homepage": "https://github.com/shiyu3169/web-maker-react#readme",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "mongoose": "^5.3.1",
-    "multer": "^1.4.0",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
-  }
+    "name": "web-maker-react",
+    "version": "1.0.0",
+    "description": "Web maker build with MERN stack",
+    "main": "server.js",
+    "scripts": {
+        "client-install": "npm install --prefix client",
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\" "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shiyu3169/web-maker-react.git"
+    },
+    "author": "Shiyu Wang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/shiyu3169/web-maker-react/issues"
+    },
+    "homepage": "https://github.com/shiyu3169/web-maker-react#readme",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "concurrently": "^4.0.1",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.16.3",
+        "express-session": "^1.15.6",
+        "mongoose": "^5.3.1",
+        "multer": "^1.4.0",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
 }
