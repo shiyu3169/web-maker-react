@@ -69,16 +69,6 @@ export default class WebsiteList extends Component {
                         </li>
                     </ul>
                 </div>
-                <nav className="navbar navbar-dark bg-primary fixed-bottom">
-                    <div className="full-width">
-                        <Link
-                            className="color-white float-right"
-                            to="/user/:uid"
-                        >
-                            <i className="fas fa-user" />
-                        </Link>
-                    </div>
-                </nav>
             </div>
         );
     }

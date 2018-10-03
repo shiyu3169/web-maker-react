@@ -57,13 +57,6 @@ export default class WidgetImage extends Component {
                         </Link>
                     </form>
                 </div>
-                <footer class="navbar navbar-light fixed-bottom bg-light">
-                    <div class="full-width">
-                        <Link class="color-black float-right" to="/user/:uid">
-                            <i class="fas fa-user" />
-                        </Link>
-                    </div>
-                </footer>
             </div>
         );
     }

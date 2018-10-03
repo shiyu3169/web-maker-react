@@ -56,16 +56,6 @@ export default class WidgetChooser extends Component {
                         </li>
                     </ul>
                 </div>
-                <footer className="navbar navbar-light fixed-bottom bg-light">
-                    <div className="full-width">
-                        <Link
-                            className="color-black float-right"
-                            to="/user/:uid"
-                        >
-                            <i className="fas fa-user" />
-                        </Link>
-                    </div>
-                </footer>
             </div>
         );
     }

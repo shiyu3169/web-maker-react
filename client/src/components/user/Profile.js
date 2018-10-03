@@ -20,7 +20,10 @@ class Profile extends Component {
                             <label>
                                 <b>Username</b>
                             </label>
-                            <input className="form-control" />
+                            <input
+                                className="form-control"
+                                placeholder="Alice"
+                            />
                         </div>
                         <div className="form-group">
                             <label>
@@ -51,16 +54,6 @@ class Profile extends Component {
                         </Link>
                     </form>
                 </div>
-                <nav className="navbar navbar-dark bg-primary fixed-bottom">
-                    <div className="full-width">
-                        <Link
-                            className="color-white float-right"
-                            to="/user/:uid"
-                        >
-                            <i className="fas fa-user" />
-                        </Link>
-                    </div>
-                </nav>
             </div>
         );
     }

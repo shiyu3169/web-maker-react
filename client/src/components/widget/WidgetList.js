@@ -149,16 +149,6 @@ export default class WidgetList extends Component {
                         </div>
                     </div>
                 </div>
-                <footer className="navbar navbar-light fixed-bottom bg-light">
-                    <div className="full-width">
-                        <Link
-                            className="color-black float-right"
-                            to="../User/Profile.html"
-                        >
-                            <i className="fas fa-user" />
-                        </Link>
-                    </div>
-                </footer>
             </div>
         );
     }

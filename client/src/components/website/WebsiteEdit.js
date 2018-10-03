@@ -143,13 +143,6 @@ export default class WebsiteEdit extends Component {
                         </div>
                     </div>
                 </div>
-                <nav class="navbar navbar-dark bg-primary fixed-bottom">
-                    <div class="full-width">
-                        <Link class="color-white float-right" to="/user/:uid">
-                            <i class="fas fa-user" />
-                        </Link>
-                    </div>
-                </nav>
             </div>
         );
     }

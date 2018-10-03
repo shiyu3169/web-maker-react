@@ -15,69 +15,82 @@ import PageEdit from "./components/page/PageEdit";
 // Widget Components
 import WidgetList from "./components/widget/WidgetList";
 import WidgetChooser from "./components/widget/WidgetChooser";
-import WidgetEdit from "./components/widget/widgetEdit/WidgetEdit";
+import WidgetEdit from "./components/widget/WidgetEdit";
+import Footer from "./components/layout/Footer";
 
 export default class App extends Component {
     render() {
-        const { users, websites, pages, widgets } = this.state;
         return (
-            <Router>
-                <Switch>
-                    {/* User */}
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/user/:uid" component={Profile} />
-                    {/* Website */}
-                    <Route
-                        exact
-                        path="/user/:uid/website"
-                        component={WebsiteList}
-                    />
-                    <Route
-                        exact
-                        path="/user/:uid/website/new"
-                        component={WebsiteNew}
-                    />
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid"
-                        component={WebsiteEdit}
-                    />
-                    {/* Page */}
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid/page"
-                        component={PageList}
-                    />
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid/page/new"
-                        component={PageNew}
-                    />
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid/page/:pid"
-                        component={PageEdit}
-                    />
-                    {/* Widget */}
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid/page/:pid/widget"
-                        component={WidgetList}
-                    />
-                    <Route
-                        exact
-                        path="/user/:uid/website/:wid/page/:pid/widget/new"
-                        component={WidgetChooser}
-                    />
-                    {/* <Route
+            <div>
+                <Router>
+                    <div>
+                        <Switch>
+                            {/* User */}
+                            <Route exact path="/login" component={Login} />
+                            <Route
+                                exact
+                                path="/register"
+                                component={Register}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid"
+                                component={Profile}
+                            />
+                            {/* Website */}
+                            <Route
+                                exact
+                                path="/user/:uid/website"
+                                component={WebsiteList}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid/website/new"
+                                component={WebsiteNew}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid"
+                                component={WebsiteEdit}
+                            />
+                            {/* Page */}
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid/page"
+                                component={PageList}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid/page/new"
+                                component={PageNew}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid/page/:pid"
+                                component={PageEdit}
+                            />
+                            {/* Widget */}
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid/page/:pid/widget"
+                                component={WidgetList}
+                            />
+                            <Route
+                                exact
+                                path="/user/:uid/website/:wid/page/:pid/widget/new"
+                                component={WidgetChooser}
+                            />
+                            {/* <Route
                         exact
                         path="/user/:uid/website/:wid/page/:pid/widget/:wgid"
                         component={WidgetEdit}
                     /> */}
-                    <Route component={Login} />
-                </Switch>
-            </Router>
+                            <Route component={Login} />
+                        </Switch>
+                        <Footer />
+                    </div>
+                </Router>
+            </div>
         );
     }
 }
