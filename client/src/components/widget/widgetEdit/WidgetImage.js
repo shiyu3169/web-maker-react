@@ -5,15 +5,24 @@ export default class WidgetImage extends Component {
         return (
             <div>
                 <nav class="navbar navbar-light fixed-top bg-light">
-                    <a class="color-black" href="Widget-list.html">
+                    <Link
+                        class="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         <i class="fas fa-chevron-left" />
-                    </a>
-                    <a class="navbar-brand" href="Widget-heading.html">
+                    </Link>
+                    <Link
+                        class="navbar-brand"
+                        to="/user/:uid/website/:wid/page/:pid/widget/:wgid"
+                    >
                         Edit Widget
-                    </a>
-                    <a class="color-black" href="Widget-list.html">
+                    </Link>
+                    <Link
+                        class="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         <i class="fas fa-check" />
-                    </a>
+                    </Link>
                 </nav>
                 <div class="container">
                     <form>
@@ -39,22 +48,19 @@ export default class WidgetImage extends Component {
                                 class="form-control"
                             />
                         </div>
-                        <a
-                            href="Widget-list.html"
+                        <Link
+                            to="/user/:uid/website/:wid/page/:pid/widget"
                             class="btn btn-danger btn-block"
                         >
                             Delete
-                        </a>
+                        </Link>
                     </form>
                 </div>
                 <footer class="navbar navbar-light fixed-bottom bg-light">
                     <div class="full-width">
-                        <a
-                            class="color-black float-right"
-                            href="../User/Profile.html"
-                        >
+                        <Link class="color-black float-right" to="/user/:uid">
                             <i class="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </footer>
             </div>

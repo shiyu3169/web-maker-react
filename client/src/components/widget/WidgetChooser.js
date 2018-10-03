@@ -5,55 +5,64 @@ export default class WidgetChooser extends Component {
         return (
             <div>
                 <nav className="navbar-light fixed-top bg-light">
-                    <a className="color-black" href="Widget-list.html">
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         <i className="fas fa-chevron-left" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         className="navbar-brand padding-left"
-                        href="Widget-chooser.html"
+                        to="/user/:uid/website/:wid/page/:pid/widget/new"
                     >
                         Choose Widget
-                    </a>
+                    </Link>
                 </nav>
                 <div className="container">
                     <ul className="list-group-flush">
                         <li className="list-group-item">
-                            <a href="Widget-heading.html">Heading</a>
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                                Heading
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Label</a>
+                            <Link to="#">Label</Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Text Input</a>
+                            <Link to="#">Text Input</Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Link</a>
+                            <Link to="#">Link</Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Button</a>
+                            <Link to="#">Button</Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="Widget-image.html">Image</a>
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                                Image
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="Widget-youtube.html">Youtube</a>
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                                Youtube
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Data Table</a>
+                            <Link to="#">Data Table</Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="#">Repeater</a>
+                            <Link to="#">Repeater</Link>
                         </li>
                     </ul>
                 </div>
                 <footer className="navbar navbar-light fixed-bottom bg-light">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-black float-right"
-                            href="../User/Profile.html"
+                            to="/user/:uid"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </footer>
             </div>

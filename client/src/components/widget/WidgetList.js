@@ -5,25 +5,34 @@ export default class WidgetList extends Component {
         return (
             <div>
                 <nav className="navbar navbar-light fixed-top bg-light">
-                    <a className="color-black" href="../Page/Page-list.html">
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page"
+                    >
                         <i className="fas fa-chevron-left" />
-                    </a>
-                    <a className="navbar-brand" href="Widget-list.html">
+                    </Link>
+                    <Link
+                        className="navbar-brand"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         Widgets
-                    </a>
-                    <a className="color-black" href="Widget-chooser.html">
+                    </Link>
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget/new"
+                    >
                         <i className="fas fa-plus" />
-                    </a>
+                    </Link>
                 </nav>
                 <div className="container-fluid">
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-heading.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <h1>Welcome</h1>
@@ -31,12 +40,12 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-heading.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <h3>
@@ -48,12 +57,12 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-image.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <img
@@ -65,21 +74,21 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-heading.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <h5>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Tempora, architecto
                                 dignissimos. Voluptatibus placeat excepturi eum{" "}
-                                <a href="http://www.google.com">
+                                <Link to="http://www.google.com">
                                     repellendus totam quam error atque
-                                </a>{" "}
+                                </Link>{" "}
                                 asperiores, blanditiis sequi sit, reiciendis
                                 quibusdam? In numquam expedita impedit.
                             </h5>
@@ -87,12 +96,12 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-heading.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <h3> vel sit repellendus quis</h3>
@@ -100,12 +109,12 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-youtube.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div className="embed-responsive embed-responsive-16by9">
                             <iframe
@@ -120,12 +129,12 @@ export default class WidgetList extends Component {
                     </div>
                     <div>
                         <div className="absolute-right">
-                            <a href="Widget-heading.html">
+                            <Link to="/user/:uid/website/:wid/page/:pid/widget/:wgid">
                                 <i className="fas fa-cog" />
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link to="#">
                                 <i className="fas fa-bars" />
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <h5>
@@ -141,12 +150,12 @@ export default class WidgetList extends Component {
                 </div>
                 <footer className="navbar navbar-light fixed-bottom bg-light">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-black float-right"
-                            href="../User/Profile.html"
+                            to="../User/Profile.html"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </footer>
             </div>

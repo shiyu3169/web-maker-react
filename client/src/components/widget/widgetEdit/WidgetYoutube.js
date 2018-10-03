@@ -5,15 +5,24 @@ export default class WidgetYoutube extends Component {
         return (
             <div>
                 <nav className="navbar navbar-light fixed-top bg-light">
-                    <a className="color-black" href="Widget-list.html">
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         <i className="fas fa-chevron-left" />
-                    </a>
-                    <a className="navbar-brand" href="Widget-heading.html">
+                    </Link>
+                    <Link
+                        className="navbar-brand"
+                        to="/user/:uid/website/:wid/page/:pid/widget/:wgid"
+                    >
                         Edit Widget
-                    </a>
-                    <a className="color-black" href="Widget-list.html">
+                    </Link>
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page/:pid/widget"
+                    >
                         <i className="fas fa-check" />
-                    </a>
+                    </Link>
                 </nav>
                 <div className="container">
                     <form>
@@ -47,22 +56,22 @@ export default class WidgetYoutube extends Component {
                                 className="form-control"
                             />
                         </div>
-                        <a
-                            href="Widget-list.html"
+                        <Link
+                            to="/user/:uid/website/:wid/page/:pid/widget"
                             className="btn btn-danger btn-block"
                         >
                             Delete
-                        </a>
+                        </Link>
                     </form>
                 </div>
                 <footer className="navbar navbar-light fixed-bottom bg-light">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-black float-right"
-                            href="../User/Profile.html"
+                            to="/user/:uid"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </footer>
             </div>
