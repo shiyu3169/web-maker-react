@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 export default class WebsiteEdit extends Component {
     render() {
@@ -95,38 +96,19 @@ export default class WebsiteEdit extends Component {
                     <div class="col-sm-8">
                         <div class="container-fluid">
                             <form>
-                                <div class="form-group">
-                                    <label htmlFor="name">
-                                        <b>Name</b>
-                                    </label>
-                                    <input
-                                        id="name"
-                                        class="form-control"
-                                        type="text"
-                                        placeholder="Name of the Website"
-                                        value="Blogger"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">
-                                        <b>Description</b>
-                                    </label>
-                                    <textarea
-                                        id="description"
-                                        rows="5"
-                                        class="form-control"
-                                        type="text"
-                                        placeholder="Describe the Website"
-                                    >
-                                        Lorem ipsum dolor, sit amet consectetur
-                                        adipisicing elit. Maxime aut sequi qui,
-                                        quisquam cupiditate repellat, aliquam
-                                        doloremque tempora blanditiis facilis
-                                        assumenda incidunt reprehenderit non
-                                        dicta tempore iste labore dolor?
-                                        Provident!
-                                    </textarea>
-                                </div>
+                                <InputGroup
+                                    name="name"
+                                    label="Name"
+                                    type="text"
+                                    placeholder="Enter to Edit Website Name..."
+                                />
+                                <InputGroup
+                                    name="description"
+                                    label="Description"
+                                    type="text"
+                                    rows="5"
+                                    placeholder="Enter to Edit Website Description..."
+                                />
                                 <Link
                                     to="/user/:uid/website"
                                     class="btn btn-lg btn-warning"

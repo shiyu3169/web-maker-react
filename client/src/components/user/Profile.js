@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 class Profile extends Component {
     render() {
@@ -16,33 +17,30 @@ class Profile extends Component {
                 <br />
                 <div className="container">
                     <form>
-                        <div className="form-group">
-                            <label>
-                                <b>Username</b>
-                            </label>
-                            <input
-                                className="form-control"
-                                placeholder="Alice"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>
-                                <b>Email</b>
-                            </label>
-                            <input className="form-control" />
-                        </div>
-                        <div className="form-group">
-                            <label>
-                                <b>First Name</b>
-                            </label>
-                            <input className="form-control" />
-                        </div>
-                        <div className="form-group">
-                            <label>
-                                <b>Last Name</b>
-                            </label>
-                            <input className="form-control" />
-                        </div>
+                        <InputGroup
+                            name="username"
+                            label="Username"
+                            type="text"
+                            placeholder="Enter your username..."
+                        />
+                        <InputGroup
+                            name="email"
+                            label="Email"
+                            type="email"
+                            placeholder="Enter to edit your email..."
+                        />
+                        <InputGroup
+                            name="firstName"
+                            label="First Name"
+                            type="text"
+                            placeholder="Enter to edit your first name..."
+                        />
+                        <InputGroup
+                            name="lastName"
+                            label="Last Name"
+                            type="text"
+                            placeholder="Enter to edit your last name..."
+                        />
                         <Link
                             to="/user/:uid/website"
                             className="btn btn-primary btn-block"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 class Login extends Component {
     render() {
@@ -7,20 +8,18 @@ class Login extends Component {
             <div className="container">
                 <h1>Login</h1>
                 <form>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Username"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </div>
+                    <InputGroup
+                        name="username"
+                        label="Username"
+                        type="text"
+                        placeholder="Enter your username..."
+                    />
+                    <InputGroup
+                        name="password"
+                        label="Password"
+                        type="password"
+                        placeholder="Enter your password..."
+                    />
                     <Link to="/user/:uid" className="btn btn-primary btn-block">
                         Login
                     </Link>

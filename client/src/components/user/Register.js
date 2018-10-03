@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 export default class Register extends Component {
     render() {
@@ -7,27 +8,24 @@ export default class Register extends Component {
             <div className="container">
                 <h1>Register</h1>
                 <form>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Username"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="password"
-                            placeholder="Verify Password"
-                        />
-                    </div>
+                    <InputGroup
+                        name="username"
+                        label="Username"
+                        type="text"
+                        placeholder="Enter your username..."
+                    />
+                    <InputGroup
+                        name="password"
+                        label="Password"
+                        type="password"
+                        placeholder="Enter your password..."
+                    />
+                    <InputGroup
+                        name="verifyPassword"
+                        label="Verify Password"
+                        type="password"
+                        placeholder="Verify your password..."
+                    />
                     <Link to="/user/:uid" className="btn btn-primary btn-block">
                         Register
                     </Link>

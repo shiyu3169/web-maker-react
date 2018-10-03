@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 export default class PageEdit extends Component {
     render() {
@@ -27,30 +28,18 @@ export default class PageEdit extends Component {
                 </nav>
                 <div className="container">
                     <form>
-                        <div className="form-group">
-                            <label for="name">
-                                <b>Name</b>
-                            </label>
-                            <input
-                                className="form-control"
-                                id="name"
-                                type="text"
-                                placeholder="Name of the page..."
-                                value="Blog Post"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label for="title">
-                                <b>Title</b>
-                            </label>
-                            <input
-                                className="form-control"
-                                type="text"
-                                id="title"
-                                placeholder="Title of the page..."
-                                value="Blog Post"
-                            />
-                        </div>
+                        <InputGroup
+                            name="name"
+                            label="name"
+                            type="text"
+                            placeholder="Enter to Edit Page Name..."
+                        />
+                        <InputGroup
+                            name="title"
+                            label="Title"
+                            type="text"
+                            placeholder="Enter to Edit Page Title..."
+                        />
                         <Link
                             to="/user/:uid/website/:wid/page"
                             className="btn btn-lg btn-warning"

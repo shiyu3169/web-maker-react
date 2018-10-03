@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import InputGroup from "../layout/InputGroup";
 
 export default class WebsiteNew extends Component {
     render() {
@@ -98,29 +99,19 @@ export default class WebsiteNew extends Component {
                     <div className="col-sm-8">
                         <div className="container-fluid">
                             <form>
-                                <div className="form-group">
-                                    <label htmlFor="name">
-                                        <b>Name</b>
-                                    </label>
-                                    <input
-                                        id="name"
-                                        className="form-control"
-                                        type="text"
-                                        placeholder="Name of the Website"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="description">
-                                        <b>Description</b>
-                                    </label>
-                                    <textarea
-                                        id="description"
-                                        rows="5"
-                                        className="form-control"
-                                        type="text"
-                                        placeholder="Describe the Website"
-                                    />
-                                </div>
+                                <InputGroup
+                                    name="name"
+                                    label="Name"
+                                    type="text"
+                                    placeholder="Name for New Website..."
+                                />
+                                <InputGroup
+                                    name="description"
+                                    label="Description"
+                                    type="text"
+                                    placeholder="Description for New Website..."
+                                    rows="5"
+                                />
                                 <Link
                                     to="/user/:uid/website"
                                     className="btn btn-lg btn-warning"
