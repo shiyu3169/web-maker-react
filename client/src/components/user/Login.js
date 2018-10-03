@@ -21,15 +21,12 @@ class Login extends Component {
                             placeholder="Password"
                         />
                     </div>
-                    <Link to="/user" className="btn btn-primary btn-block">
+                    <Link to="/user/:uid" className="btn btn-primary btn-block">
                         Login
                     </Link>
-                    <a
-                        href="Register.html"
-                        className="btn btn-success btn-block"
-                    >
+                    <Link to="/register" className="btn btn-success btn-block">
                         Register
-                    </a>
+                    </Link>
                 </form>
             </div>
         );

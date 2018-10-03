@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
     render() {
@@ -39,20 +40,27 @@ class Profile extends Component {
                             </label>
                             <input className="form-control" />
                         </div>
-                        <a
-                            href="../Website/Website-list.html"
+                        <Link
+                            to="/user/:uid/website"
                             className="btn btn-primary btn-block"
                         >
                             Websites
-                        </a>
-                        <a
-                            href="Login.html"
-                            className="btn btn-danger btn-block"
-                        >
+                        </Link>
+                        <Link to="/login" className="btn btn-danger btn-block">
                             Logout
-                        </a>
+                        </Link>
                     </form>
                 </div>
+                <nav className="navbar navbar-dark bg-primary fixed-bottom">
+                    <div className="full-width">
+                        <Link
+                            className="color-white float-right"
+                            to="/user/:uid"
+                        >
+                            <i className="fas fa-user" />
+                        </Link>
+                    </div>
+                </nav>
             </div>
         );
     }

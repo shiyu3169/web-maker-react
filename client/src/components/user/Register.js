@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Register extends Component {
     render() {
@@ -27,15 +28,12 @@ export default class Register extends Component {
                             placeholder="Verify Password"
                         />
                     </div>
-                    <a
-                        href="Profile.html"
-                        className="btn btn-primary btn-block"
-                    >
+                    <Link to="/user/:uid" className="btn btn-primary btn-block">
                         Register
-                    </a>
-                    <a href="Login.html" className="btn btn-danger btn-block">
+                    </Link>
+                    <Link to="/login" className="btn btn-danger btn-block">
                         Cancel
-                    </a>
+                    </Link>
                 </form>
             </div>
         );
