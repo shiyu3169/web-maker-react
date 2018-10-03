@@ -5,15 +5,24 @@ export default class PageNew extends Component {
         return (
             <div>
                 <nav className="navbar navbar-light fixed-top bg-light">
-                    <a className="color-black" href="Page-list.html">
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page"
+                    >
                         <i className="fas fa-chevron-left" />
-                    </a>
-                    <a className="navbar-brand" href="Page-new.html">
+                    </Link>
+                    <Link
+                        className="navbar-brand"
+                        to="/user/:uid/website/:wid/page/new"
+                    >
                         New Page
-                    </a>
-                    <a className="color-black" href="Page-list.html">
+                    </Link>
+                    <Link
+                        className="color-black"
+                        to="/user/:uid/website/:wid/page"
+                    >
                         <i className="fas fa-check" />
-                    </a>
+                    </Link>
                 </nav>
                 <div className="container">
                     <form>
@@ -39,28 +48,28 @@ export default class PageNew extends Component {
                                 placeholder="Title of the page..."
                             />
                         </div>
-                        <a
-                            href="Page-list.html"
+                        <Link
+                            to="/user/:uid/website/:wid/page"
                             className="btn btn-lg btn-warning"
                         >
                             Cancel
-                        </a>
-                        <a
-                            href="Page-list.html"
+                        </Link>
+                        <Link
+                            to="/user/:uid/website/:wid/page"
                             className="btn btn-lg btn-success float-right"
                         >
                             Submit
-                        </a>
+                        </Link>
                     </form>
                 </div>
                 <footer className="navbar navbar-light fixed-bottom bg-light">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-black float-right"
-                            href="../User/Profile.html"
+                            to="/user/:uid"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </footer>
             </div>
