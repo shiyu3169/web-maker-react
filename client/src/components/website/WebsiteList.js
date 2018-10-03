@@ -1,62 +1,82 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class WebsiteList extends Component {
     render() {
         return (
             <div>
                 <nav className="navbar fixed-top navbar-dark bg-primary">
-                    <a className="color-white" href="../User/Profile.html">
+                    <Link className="color-white" to="/user/:uid">
                         <i className="fas fa-chevron-left" />
-                    </a>
+                    </Link>
                     <div className="sw-90-width">
-                        <a className="navbar-brand float-left" href="#">
+                        <Link
+                            className="navbar-brand float-left"
+                            to="/user/:uid/website"
+                        >
                             <b>Websites</b>
-                        </a>
+                        </Link>
                     </div>
-                    <a className="color-white" href="Website-new.html">
+                    <Link className="color-white" to="/user/:uid/website/new">
                         <i className="fas fa-plus" />
-                    </a>
+                    </Link>
                 </nav>
                 <div className="container-fluid">
                     <ul className="list-group">
                         <li className="list-group-item">
-                            <a href="../Page/Page-list.html">
+                            <Link to="/user/:uid/website/:wid/page">
                                 Address Book App
-                            </a>
-                            <a className="float-right" href="Website-edit.html">
+                            </Link>
+                            <Link
+                                className="float-right"
+                                to="/user/:uid/website/:wid/page/:pid"
+                            >
                                 <i className="fas fa-cog" />
-                            </a>
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="../Page/Page-list.html">Blogger</a>
-                            <a className="float-right" href="Website-edit.html">
+                            <Link to="/user/:uid/website/:wid/page">
+                                Blogger
+                            </Link>
+                            <Link
+                                className="float-right"
+                                to="/user/:uid/website/:wid/page/:pid"
+                            >
                                 <i className="fas fa-cog" />
-                            </a>
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="../Page/Page-list.html">Blogging App</a>
-                            <a className="float-right" href="Website-edit.html">
+                            <Link to="/user/:uid/website/:wid/page">
+                                Blogging App
+                            </Link>
+                            <Link
+                                className="float-right"
+                                to="/user/:uid/website/:wid/page/:pid"
+                            >
                                 <i className="fas fa-cog" />
-                            </a>
+                            </Link>
                         </li>
                         <li className="list-group-item">
-                            <a href="../Page/Page-list.html">
+                            <Link to="/user/:uid/website/:wid/page">
                                 Script Testing App
-                            </a>
-                            <a className="float-right" href="Website-edit.html">
+                            </Link>
+                            <Link
+                                className="float-right"
+                                to="/user/:uid/website/:wid/page/:pid"
+                            >
                                 <i className="fas fa-cog" />
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
                 <nav className="navbar navbar-dark bg-primary fixed-bottom">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-white float-right"
-                            href="../User/Profile.html"
+                            to="/user/:uid"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>

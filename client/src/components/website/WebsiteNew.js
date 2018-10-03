@@ -6,35 +6,41 @@ export default class WebsiteNew extends Component {
             <div>
                 <nav className="navbar navbar-dark bg-primary fixed-top row nav-height">
                     <div className="col-4 d-none d-sm-block">
-                        <a className="color-white" href="Website-list.html">
+                        <Link className="color-white" to="/user/:uid/website">
                             <i className="fas fa-chevron-left" />
-                        </a>
-                        <a className="color-white padding-left" href="#">
+                        </Link>
+                        <Link
+                            className="color-white padding-left"
+                            to="/user/:uid/website/:wid/page"
+                        >
                             <h5 className="display-inline">Websites</h5>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="color-white float-right"
-                            href="Website-new.html"
+                            to="/user/:uid/website/:wid/page/new"
                         >
                             <i className="fas fa-plus" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-sm-8">
-                        <a
+                        <Link
                             className="color-white d-sm-none"
-                            href="Website-list.html"
+                            to="/user/:uid/website"
                         >
                             <i className="fas fa-chevron-left" />
-                        </a>
-                        <a className="color-white padding-left" href="#">
+                        </Link>
+                        <Link
+                            className="color-white padding-left"
+                            to="/user/:uid/website/new"
+                        >
                             <h5 className="display-inline">New Website</h5>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="color-white float-right"
-                            href="Website-list.html"
+                            to="/user/:uid/website"
                         >
                             <i className="fas fa-check" />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
                 <div className="row">
@@ -42,46 +48,48 @@ export default class WebsiteNew extends Component {
                         <div className="container-fluid">
                             <ul className="list-group">
                                 <li className="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Address Book App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i className="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="list-group-item">
-                                    <a href="../Page/Page-list.html">Blogger</a>
-                                    <a
+                                    <Link to="/user/:uid/website/:wid/page">
+                                        Blogger
+                                    </Link>
+                                    <Link
                                         className="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i className="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Blogging App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i className="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Script Testing App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i className="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -112,30 +120,30 @@ export default class WebsiteNew extends Component {
                                         placeholder="Describe the Website"
                                     />
                                 </div>
-                                <a
-                                    href="Website-list.html"
+                                <Link
+                                    to="/user/:uid/website"
                                     className="btn btn-lg btn-warning"
                                 >
                                     Cancel
-                                </a>
-                                <a
-                                    href="Website-list.html"
+                                </Link>
+                                <Link
+                                    to="/user/:uid/website"
                                     className="btn btn-lg btn-success float-right"
                                 >
                                     Submit
-                                </a>
+                                </Link>
                             </form>
                         </div>
                     </div>
                 </div>
                 <nav className="navbar navbar-dark bg-primary fixed-bottom">
                     <div className="full-width">
-                        <a
+                        <Link
                             className="color-white float-right"
-                            href="../User/Profile.html"
+                            to="/user/:uid"
                         >
                             <i className="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>

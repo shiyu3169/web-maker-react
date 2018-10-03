@@ -6,35 +6,38 @@ export default class WebsiteEdit extends Component {
             <div>
                 <nav class="navbar navbar-dark bg-primary fixed-top row nav-height">
                     <div class="col-4 d-none d-sm-block">
-                        <a class="color-white" href="Website-list.html">
+                        <Link class="color-white" to="/user/:uid/website">
                             <i class="fas fa-chevron-left" />
-                        </a>
-                        <a class="color-white padding-left" href="#">
+                        </Link>
+                        <Link class="color-white padding-left" to="#">
                             <h5 class="display-inline">Websites</h5>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             class="color-white float-right"
-                            href="Website-new.html"
+                            to="/user/:uid/website/new"
                         >
                             <i class="fas fa-plus" />
-                        </a>
+                        </Link>
                     </div>
                     <div class="col-sm-8">
-                        <a
+                        <Link
                             class="color-white d-sm-none"
-                            href="Website-list.html"
+                            to="/user/:uid/website"
                         >
                             <i class="fas fa-chevron-left" />
-                        </a>
-                        <a class="color-white padding-left" href="#">
+                        </Link>
+                        <Link
+                            class="color-white padding-left"
+                            to="/user/:uid/website/:wid"
+                        >
                             <h5 class="display-inline">Edit Website</h5>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             class="color-white float-right"
-                            href="Website-list.html"
+                            to="/user/:uid/website"
                         >
                             <i class="fas fa-check" />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
                 <div class="row">
@@ -42,46 +45,48 @@ export default class WebsiteEdit extends Component {
                         <div class="container-fluid">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Address Book App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         class="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i class="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="../Page/Page-list.html">Blogger</a>
-                                    <a
+                                    <Link to="/user/:uid/website/:wid/page">
+                                        Blogger
+                                    </Link>
+                                    <Link
                                         class="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i class="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Blogging App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         class="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i class="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="../Page/Page-list.html">
+                                    <Link to="/user/:uid/website/:wid/page">
                                         Script Testing App
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         class="float-right"
-                                        href="Website-edit.html"
+                                        to="/user/:uid/website/:wid"
                                     >
                                         <i class="fas fa-cog" />
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -121,30 +126,27 @@ export default class WebsiteEdit extends Component {
                                         Provident!
                                     </textarea>
                                 </div>
-                                <a
-                                    href="Website-list.html"
+                                <Link
+                                    to="/user/:uid/website"
                                     class="btn btn-lg btn-warning"
                                 >
                                     Cancel
-                                </a>
-                                <a
-                                    href="Website-list.html"
+                                </Link>
+                                <Link
+                                    to="/user/:uid/website"
                                     class="btn btn-lg btn-danger float-right"
                                 >
                                     Delete
-                                </a>
+                                </Link>
                             </form>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-dark bg-primary fixed-bottom">
                     <div class="full-width">
-                        <a
-                            class="color-white float-right"
-                            href="../User/Profile.html"
-                        >
+                        <Link class="color-white float-right" to="/user/:uid">
                             <i class="fas fa-user" />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>
