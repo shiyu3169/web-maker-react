@@ -19,11 +19,11 @@ import WidgetEdit from "./components/widget/widgetEdit/WidgetEdit";
 
 export default class App extends Component {
     render() {
+        const { users, websites, pages, widgets } = this.state;
         return (
             <Router>
                 <Switch>
                     {/* User */}
-                    <Route exact path="/" component={Login} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/user/:uid" component={Profile} />
@@ -70,11 +70,12 @@ export default class App extends Component {
                         path="/user/:uid/website/:wid/page/:pid/widget/new"
                         component={WidgetChooser}
                     />
-                    <Route
+                    {/* <Route
                         exact
                         path="/user/:uid/website/:wid/page/:pid/widget/:wgid"
                         component={WidgetEdit}
-                    />
+                    /> */}
+                    <Route component={Login} />
                 </Switch>
             </Router>
         );
