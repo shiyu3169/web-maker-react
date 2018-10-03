@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
     render() {
@@ -20,12 +21,9 @@ class Login extends Component {
                             placeholder="Password"
                         />
                     </div>
-                    <a
-                        href="Profile.html"
-                        className="btn btn-primary btn-block"
-                    >
+                    <Link to="/user" className="btn btn-primary btn-block">
                         Login
-                    </a>
+                    </Link>
                     <a
                         href="Register.html"
                         className="btn btn-success btn-block"
