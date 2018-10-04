@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Heading from "../layout/Heading";
+import Image from "../layout/Image";
 
 export default class WidgetList extends Component {
     render() {
@@ -61,13 +62,11 @@ export default class WidgetList extends Component {
                                 <i className="fas fa-bars" />
                             </Link>
                         </div>
-                        <div>
-                            <img
-                                className="img-fluid"
-                                src="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg"
-                                alt="bird"
-                            />
-                        </div>
+                        <Image
+                            src="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg"
+                            alt="bird"
+                            width="50%"
+                        />
                     </div>
                     <div>
                         <div className="absolute-right">
@@ -107,9 +106,9 @@ export default class WidgetList extends Component {
                                 width="1903"
                                 height="769"
                                 src="https://www.youtube.com/embed/SqrbIlUwR0U"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="autoplay; encrypted-media"
-                                allowfullscreen
+                                allowFullScreen
                             />
                         </div>
                     </div>
