@@ -5,26 +5,6 @@ export default class WidgetImage extends Component {
     render() {
         return (
             <div>
-                <nav class="navbar navbar-light fixed-top bg-light">
-                    <Link
-                        class="color-black"
-                        to="/user/:uid/website/:wid/page/:pid/widget"
-                    >
-                        <i class="fas fa-chevron-left" />
-                    </Link>
-                    <Link
-                        class="navbar-brand"
-                        to="/user/:uid/website/:wid/page/:pid/widget/:wgid"
-                    >
-                        Edit Widget
-                    </Link>
-                    <Link
-                        class="color-black"
-                        to="/user/:uid/website/:wid/page/:pid/widget"
-                    >
-                        <i class="fas fa-check" />
-                    </Link>
-                </nav>
                 <div class="container">
                     <form>
                         <div class="form-group">
