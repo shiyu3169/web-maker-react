@@ -6,14 +6,6 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-dark bg-primary fixed-top">
-                    <a className="navbar-brand" href="#">
-                        <b>Profile</b>
-                    </a>
-                    <a className="color-white" href="#">
-                        <i className="fas fa-check" />
-                    </a>
-                </nav>
                 <br />
                 <div className="container">
                     <form>
