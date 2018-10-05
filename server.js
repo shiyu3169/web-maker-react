@@ -67,9 +67,14 @@ const server = http.createServer(app);
 require("./server/app")(app);
 
 // For Build: Catch all other routes and return the index file -- BUILDING
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "client/build/index.html"));
-});
+if (process.env.NODE_ENV === "proudcation") {
+    // Set static folder
+    app.use(espress.static("client/build"));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
 
 // server.listen(port);
 server.listen(port, function() {
