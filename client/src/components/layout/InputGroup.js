@@ -1,7 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const InputGroup = ({ name, label, type, placeholder, rows }) => {
+const InputGroup = ({
+    name,
+    label,
+    type,
+    placeholder,
+    rows,
+    onChange,
+    error
+}) => {
     return (
         <div>
             {rows > 1 ? (
@@ -16,6 +24,7 @@ const InputGroup = ({ name, label, type, placeholder, rows }) => {
                         placeholder={placeholder}
                         className="form-control"
                         rows={rows}
+                        onChange={onChange}
                     />
                 </div>
             ) : (
@@ -29,9 +38,11 @@ const InputGroup = ({ name, label, type, placeholder, rows }) => {
                         id={name}
                         placeholder={placeholder}
                         className="form-control"
+                        onChange={onChange}
                     />
                 </div>
             )}
+            {error && <div className="alert alert-danger">{error}</div>}
         </div>
     );
 };
@@ -41,7 +52,9 @@ InputGroup.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
-    rows: PropTypes.string
+    rows: PropTypes.string,
+    onChange: PropTypes.func,
+    error: PropTypes.string
 };
 
 InputGroup.defaultProps = {
