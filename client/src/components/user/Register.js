@@ -12,16 +12,13 @@ export default class Register extends Component {
     };
 
     register = async user => {
-        const baseUrl = "http://localhost:3100";
-        const res = await axios.get(
-            baseUrl + `/api/user?username=${user.username}`
-        );
+        const res = await axios.get(`/api/user?username=${user.username}`);
         if (res.data) {
             this.setState({
                 errors: { match: "Username is taken, please try another one." }
             });
         } else {
-            await axios.post(baseUrl + "/api/register", user);
+            await axios.post("/api/register", user);
             this.props.history.push("/user/1");
         }
     };
