@@ -8,9 +8,12 @@ class MainNav extends Component {
                 <Link className="navbar-brand" to="/">
                     <b>Profile</b>
                 </Link>
-                <span className="color-white">
+                <button
+                    form="myForm"
+                    className="btn color-white bg-transparent"
+                >
                     <i className="fas fa-check" />
-                </span>
+                </button>
             </nav>
         );
     }

@@ -121,9 +121,14 @@ module.exports = function(app) {
     function updateUser(req, res) {
         var uid = req.params["uid"];
         var user = req.body;
-        userModel.updateUser(uid, user).then(data => {
-            res.json(data);
-        });
+        userModel
+            .updateUser(uid, user)
+            .then(data => {
+                res.json(data);
+            })
+            .catch(error => {
+                res.json(error);
+            });
     }
 
     function deleteUser(req, res) {

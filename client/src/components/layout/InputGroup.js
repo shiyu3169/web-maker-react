@@ -8,7 +8,8 @@ const InputGroup = ({
     placeholder,
     rows,
     onChange,
-    error
+    error,
+    value
 }) => {
     return (
         <div>
@@ -25,6 +26,7 @@ const InputGroup = ({
                         className="form-control"
                         rows={rows}
                         onChange={onChange}
+                        value={value}
                     />
                 </div>
             ) : (
@@ -39,6 +41,7 @@ const InputGroup = ({
                         placeholder={placeholder}
                         className="form-control"
                         onChange={onChange}
+                        value={value}
                     />
                 </div>
             )}
@@ -54,7 +57,8 @@ InputGroup.propTypes = {
     placeholder: PropTypes.string.isRequired,
     rows: PropTypes.string,
     onChange: PropTypes.func,
-    error: PropTypes.string
+    error: PropTypes.string,
+    value: PropTypes.string
 };
 
 InputGroup.defaultProps = {
