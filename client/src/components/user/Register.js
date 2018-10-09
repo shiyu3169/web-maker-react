@@ -18,8 +18,8 @@ export default class Register extends Component {
                 errors: { match: "Username is taken, please try another one." }
             });
         } else {
-            await axios.post("/api/register", user);
-            this.props.history.push("/user/1");
+            const newRes = await axios.post("/api/register", user);
+            this.props.history.push(`/user/${newRes.data._id}`);
         }
     };
 
