@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Website from "../layout/Website";
 import SingleNav from "../layout/SingleNav";
+import List from "../layout/List";
 import axios from "axios";
 
 export default class WebsiteList extends Component {
@@ -32,11 +31,7 @@ export default class WebsiteList extends Component {
                     icon="plus"
                 />
                 <div className="container-fluid">
-                    <ul className="list-group">
-                        {websites.map(website => (
-                            <Website key={website._id} website={website} />
-                        ))}
-                    </ul>
+                    <List items={websites} type="website" />
                 </div>
             </div>
         );
