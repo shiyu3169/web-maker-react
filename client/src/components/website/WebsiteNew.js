@@ -1,22 +1,55 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InputGroup from "../layout/InputGroup";
+import axios from "axios";
 
 export default class WebsiteNew extends Component {
+    state = {
+        name: "",
+        description: "",
+        errors: {}
+    };
+
+    onSubmit = e => {
+        e.preventDefault();
+        const { name, description } = this.state;
+        const newWeb = {
+            name,
+            description
+        };
+        this.createWeb(newWeb);
+    };
+
+    createWeb = async newWeb => {
+        const { uid } = this.props.match.params;
+        console.log(uid);
+        // const { data } = (res = await axios.post(`/api/user/${uid}/website`));
+    };
+    onChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value,
+            success: false,
+            errors: {
+                [e.target.name]: ""
+            }
+        });
+    };
     render() {
+        const { name, description, errors } = this.state;
+        const { uid } = this.props.match.params;
         return (
             <div>
                 <nav className="navbar navbar-dark bg-primary fixed-top row nav-height">
                     <div className="col-4 d-none d-sm-block">
-                        <Link className="color-white" to="/user/:uid/website">
+                        <Link
+                            className="color-white"
+                            to={`/user/${uid}/website`}
+                        >
                             <i className="fas fa-chevron-left" />
                         </Link>
-                        <Link
-                            className="color-white padding-left"
-                            to="/user/:uid/website/:wid/page"
-                        >
+                        <span className="color-white padding-left">
                             <h5 className="display-inline">Websites</h5>
-                        </Link>
+                        </span>
                         <Link
                             className="color-white float-right"
                             to="/user/:uid/website/:wid/page/new"
@@ -27,22 +60,19 @@ export default class WebsiteNew extends Component {
                     <div className="col-sm-8">
                         <Link
                             className="color-white d-sm-none"
-                            to="/user/:uid/website"
+                            to={`/user/${uid}/website`}
                         >
                             <i className="fas fa-chevron-left" />
                         </Link>
-                        <Link
-                            className="color-white padding-left"
-                            to="/user/:uid/website/new"
-                        >
+                        <span className="color-white padding-left">
                             <h5 className="display-inline">New Website</h5>
-                        </Link>
-                        <Link
-                            className="color-white float-right"
-                            to="/user/:uid/website"
+                        </span>
+                        <button
+                            form="myForm"
+                            className="color-white float-right btn bg-transparent no-padding"
                         >
                             <i className="fas fa-check" />
-                        </Link>
+                        </button>
                     </div>
                 </nav>
                 <div className="row">
@@ -98,12 +128,15 @@ export default class WebsiteNew extends Component {
                     </div>
                     <div className="col-sm-8">
                         <div className="container-fluid">
-                            <form>
+                            <form id="myForm" onSubmit={this.onSubmit}>
                                 <InputGroup
                                     name="name"
                                     label="Name"
                                     type="text"
                                     placeholder="Name for New Website..."
+                                    value={name}
+                                    onChange={this.onChange}
+                                    error={errors.name}
                                 />
                                 <InputGroup
                                     name="description"
@@ -111,6 +144,8 @@ export default class WebsiteNew extends Component {
                                     type="text"
                                     placeholder="Description for New Website..."
                                     rows="5"
+                                    value={description}
+                                    onChange={this.onChange}
                                 />
                                 <Link
                                     to="/user/:uid/website"
@@ -118,12 +153,9 @@ export default class WebsiteNew extends Component {
                                 >
                                     Cancel
                                 </Link>
-                                <Link
-                                    to="/user/:uid/website"
-                                    className="btn btn-lg btn-success float-right"
-                                >
+                                <button className="btn btn-lg btn-success float-right">
                                     Submit
-                                </Link>
+                                </button>
                             </form>
                         </div>
                     </div>

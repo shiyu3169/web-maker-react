@@ -91,8 +91,20 @@ class Profile extends Component {
             errors,
             success
         } = this.state;
+        const { uid } = this.props.match.params;
         return (
             <div>
+                <nav className="navbar navbar-dark bg-primary fixed-top">
+                    <span className="navbar-brand">
+                        <b>Profile</b>
+                    </span>
+                    <button
+                        form="myForm"
+                        className="color-white btn bg-transparent"
+                    >
+                        <i className="fas fa-check" />
+                    </button>
+                </nav>
                 <br />
                 {success && (
                     <div className="alert alert-success">
@@ -135,7 +147,7 @@ class Profile extends Component {
                             onChange={this.onChange}
                         />
                         <Link
-                            to="/user/:uid/website"
+                            to={`/user/${uid}/website`}
                             className="btn btn-primary btn-block"
                         >
                             Websites

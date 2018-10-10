@@ -3,21 +3,20 @@ import { Link } from "react-router-dom";
 
 export default class WebsiteList extends Component {
     render() {
+        const { uid } = this.props.match.params;
         return (
             <div>
                 <nav className="navbar fixed-top navbar-dark bg-primary">
-                    <Link className="color-white" to="/user/:uid">
+                    <Link className="color-white" to={`/user/${uid}`}>
                         <i className="fas fa-chevron-left" />
                     </Link>
-                    <div className="sw-90-width">
-                        <Link
-                            className="navbar-brand float-left"
-                            to="/user/:uid/website"
-                        >
-                            <b>Websites</b>
-                        </Link>
-                    </div>
-                    <Link className="color-white" to="/user/:uid/website/new">
+                    <span className="navbar-brand">
+                        <b>Websites</b>
+                    </span>
+                    <Link
+                        className="color-white"
+                        to={`/user/${uid}/website/new`}
+                    >
                         <i className="fas fa-plus" />
                     </Link>
                 </nav>

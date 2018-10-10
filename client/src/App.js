@@ -18,14 +18,12 @@ import WidgetChooser from "./components/widget/WidgetChooser";
 import WidgetEdit from "./components/widget/WidgetEdit";
 // Layout
 import Footer from "./components/layout/Footer";
-import MainNav from "./components/layout/MainNav";
 export default class App extends Component {
     render() {
         return (
             <div>
                 <Router>
                     <div>
-                        <MainNav />
                         <Switch>
                             {/* User */}
                             <Route exact path="/login" component={Login} />
