@@ -22,8 +22,8 @@ export default class WebsiteNew extends Component {
 
     createWeb = async newWeb => {
         const { uid } = this.props.match.params;
-        console.log(uid);
-        // const { data } = (res = await axios.post(`/api/user/${uid}/website`));
+        await axios.post(`/api/user/${uid}/website`, newWeb);
+        this.props.history.push(`/user/${uid}/website`);
     };
     onChange = e => {
         this.setState({
