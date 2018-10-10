@@ -12,10 +12,12 @@ export default class WebsiteNew extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+        const { uid } = this.props.match.params;
         const { name, description } = this.state;
         const newWeb = {
             name,
-            description
+            description,
+            developerId: uid
         };
         this.createWeb(newWeb);
     };

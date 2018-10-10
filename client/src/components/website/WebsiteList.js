@@ -1,9 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Website from "../layout/Website";
+import axios from "axios";
 
 export default class WebsiteList extends Component {
+    state = {
+        websites: []
+    };
+    componentDidMount() {
+        this.getWebsitesbyUser();
+    }
+
+    getWebsitesbyUser = async () => {
+        const { uid } = this.props.match.params;
+        const res = await axios.get(`/api/user/${uid}/website`);
+        this.setState({
+            websites: res.data
+        });
+    };
+
     render() {
         const { uid } = this.props.match.params;
+        const { websites } = this.state;
         return (
             <div>
                 <nav className="navbar fixed-top navbar-dark bg-primary">
@@ -22,50 +40,9 @@ export default class WebsiteList extends Component {
                 </nav>
                 <div className="container-fluid">
                     <ul className="list-group">
-                        <li className="list-group-item">
-                            <Link to="/user/:uid/website/:wid/page">
-                                Address Book App
-                            </Link>
-                            <Link
-                                className="float-right"
-                                to="/user/:uid/website/:wid/page/:pid"
-                            >
-                                <i className="fas fa-cog" />
-                            </Link>
-                        </li>
-                        <li className="list-group-item">
-                            <Link to="/user/:uid/website/:wid/page">
-                                Blogger
-                            </Link>
-                            <Link
-                                className="float-right"
-                                to="/user/:uid/website/:wid/page/:pid"
-                            >
-                                <i className="fas fa-cog" />
-                            </Link>
-                        </li>
-                        <li className="list-group-item">
-                            <Link to="/user/:uid/website/:wid/page">
-                                Blogging App
-                            </Link>
-                            <Link
-                                className="float-right"
-                                to="/user/:uid/website/:wid/page/:pid"
-                            >
-                                <i className="fas fa-cog" />
-                            </Link>
-                        </li>
-                        <li className="list-group-item">
-                            <Link to="/user/:uid/website/:wid/page">
-                                Script Testing App
-                            </Link>
-                            <Link
-                                className="float-right"
-                                to="/user/:uid/website/:wid/page/:pid"
-                            >
-                                <i className="fas fa-cog" />
-                            </Link>
-                        </li>
+                        {websites.map(website => (
+                            <Website key={website._id} website={website} />
+                        ))}
                     </ul>
                 </div>
             </div>
