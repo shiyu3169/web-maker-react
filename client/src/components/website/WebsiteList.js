@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Website from "../layout/Website";
+import SingleNav from "../layout/SingleNav";
 import axios from "axios";
 
 export default class WebsiteList extends Component {
@@ -24,20 +25,12 @@ export default class WebsiteList extends Component {
         const { websites } = this.state;
         return (
             <div>
-                <nav className="navbar fixed-top navbar-dark bg-primary">
-                    <Link className="color-white" to={`/user/${uid}`}>
-                        <i className="fas fa-chevron-left" />
-                    </Link>
-                    <span className="navbar-brand">
-                        <b>Websites</b>
-                    </span>
-                    <Link
-                        className="color-white"
-                        to={`/user/${uid}/website/new`}
-                    >
-                        <i className="fas fa-plus" />
-                    </Link>
-                </nav>
+                <SingleNav
+                    back={`/user/${uid}`}
+                    next={`/user/${uid}/website/new`}
+                    title="Websites"
+                    icon="plus"
+                />
                 <div className="container-fluid">
                     <ul className="list-group">
                         {websites.map(website => (

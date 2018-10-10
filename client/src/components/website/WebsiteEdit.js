@@ -4,97 +4,101 @@ import InputGroup from "../layout/InputGroup";
 
 export default class WebsiteEdit extends Component {
     render() {
+        const { uid } = this.props.match.params;
         return (
             <div>
-                <nav class="navbar navbar-dark bg-primary fixed-top row nav-height">
-                    <div class="col-4 d-none d-sm-block">
-                        <Link class="color-white" to="/user/:uid/website">
-                            <i class="fas fa-chevron-left" />
-                        </Link>
-                        <Link class="color-white padding-left" to="#">
-                            <h5 class="display-inline">Websites</h5>
-                        </Link>
+                <nav className="navbar navbar-dark bg-primary fixed-top row nav-height">
+                    <div className="col-4 d-none d-sm-block">
                         <Link
-                            class="color-white float-right"
-                            to="/user/:uid/website/new"
+                            className="color-white"
+                            to={`/user/${uid}/website`}
                         >
-                            <i class="fas fa-plus" />
+                            <i className="fas fa-chevron-left" />
+                        </Link>
+                        <span className="color-white padding-left">
+                            <h5 className="display-inline">Websites</h5>
+                        </span>
+                        <Link
+                            className="color-white float-right"
+                            to={`/user/${uid}/website/new`}
+                        >
+                            <i className="fas fa-plus" />
                         </Link>
                     </div>
-                    <div class="col-sm-8">
+                    <div className="col-sm-8">
                         <Link
-                            class="color-white d-sm-none"
+                            className="color-white d-sm-none"
                             to="/user/:uid/website"
                         >
-                            <i class="fas fa-chevron-left" />
+                            <i className="fas fa-chevron-left" />
                         </Link>
                         <Link
-                            class="color-white padding-left"
+                            className="color-white padding-left"
                             to="/user/:uid/website/:wid"
                         >
-                            <h5 class="display-inline">Edit Website</h5>
+                            <h5 className="display-inline">Edit Website</h5>
                         </Link>
                         <Link
-                            class="color-white float-right"
+                            className="color-white float-right"
                             to="/user/:uid/website"
                         >
-                            <i class="fas fa-check" />
+                            <i className="fas fa-check" />
                         </Link>
                     </div>
                 </nav>
-                <div class="row">
-                    <div class="col-4 d-none d-sm-block">
-                        <div class="container-fluid">
-                            <ul class="list-group">
-                                <li class="list-group-item">
+                <div className="row">
+                    <div className="col-4 d-none d-sm-block">
+                        <div className="container-fluid">
+                            <ul className="list-group">
+                                <li className="list-group-item">
                                     <Link to="/user/:uid/website/:wid/page">
                                         Address Book App
                                     </Link>
                                     <Link
-                                        class="float-right"
+                                        className="float-right"
                                         to="/user/:uid/website/:wid"
                                     >
-                                        <i class="fas fa-cog" />
+                                        <i className="fas fa-cog" />
                                     </Link>
                                 </li>
-                                <li class="list-group-item">
+                                <li className="list-group-item">
                                     <Link to="/user/:uid/website/:wid/page">
                                         Blogger
                                     </Link>
                                     <Link
-                                        class="float-right"
+                                        className="float-right"
                                         to="/user/:uid/website/:wid"
                                     >
-                                        <i class="fas fa-cog" />
+                                        <i className="fas fa-cog" />
                                     </Link>
                                 </li>
-                                <li class="list-group-item">
+                                <li className="list-group-item">
                                     <Link to="/user/:uid/website/:wid/page">
                                         Blogging App
                                     </Link>
                                     <Link
-                                        class="float-right"
+                                        className="float-right"
                                         to="/user/:uid/website/:wid"
                                     >
-                                        <i class="fas fa-cog" />
+                                        <i className="fas fa-cog" />
                                     </Link>
                                 </li>
-                                <li class="list-group-item">
+                                <li className="list-group-item">
                                     <Link to="/user/:uid/website/:wid/page">
                                         Script Testing App
                                     </Link>
                                     <Link
-                                        class="float-right"
+                                        className="float-right"
                                         to="/user/:uid/website/:wid"
                                     >
-                                        <i class="fas fa-cog" />
+                                        <i className="fas fa-cog" />
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-8">
-                        <div class="container-fluid">
+                    <div className="col-sm-8">
+                        <div className="container-fluid">
                             <form>
                                 <InputGroup
                                     name="name"
@@ -111,13 +115,13 @@ export default class WebsiteEdit extends Component {
                                 />
                                 <Link
                                     to="/user/:uid/website"
-                                    class="btn btn-lg btn-warning"
+                                    className="btn btn-lg btn-warning"
                                 >
                                     Cancel
                                 </Link>
                                 <Link
                                     to="/user/:uid/website"
-                                    class="btn btn-lg btn-danger float-right"
+                                    className="btn btn-lg btn-danger float-right"
                                 >
                                     Delete
                                 </Link>
