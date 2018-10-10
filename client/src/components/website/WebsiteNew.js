@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InputGroup from "../layout/InputGroup";
 import axios from "axios";
-import WebsiteList from "./WebsiteList";
+import List from "../layout/List";
 
 export default class WebsiteNew extends Component {
     state = {
         name: "",
         description: "",
-        errors: {}
+        errors: {},
+        websites: []
     };
 
     onSubmit = e => {
@@ -37,8 +38,20 @@ export default class WebsiteNew extends Component {
             }
         });
     };
+
+    componentDidMount() {
+        this.getWebsitesbyUser();
+    }
+
+    getWebsitesbyUser = async () => {
+        const { uid } = this.props.match.params;
+        const res = await axios.get(`/api/user/${uid}/website`);
+        this.setState({
+            websites: res.data
+        });
+    };
     render() {
-        const { name, description, errors } = this.state;
+        const { name, description, errors, websites } = this.state;
         const { uid } = this.props.match.params;
         return (
             <div>
@@ -81,52 +94,7 @@ export default class WebsiteNew extends Component {
                 <div className="row">
                     <div className="col-4 d-none d-sm-block">
                         <div className="container-fluid">
-                            <ul className="list-group">
-                                <li className="list-group-item">
-                                    <Link to="/user/:uid/website/:wid/page">
-                                        Address Book App
-                                    </Link>
-                                    <Link
-                                        className="float-right"
-                                        to="/user/:uid/website/:wid"
-                                    >
-                                        <i className="fas fa-cog" />
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/user/:uid/website/:wid/page">
-                                        Blogger
-                                    </Link>
-                                    <Link
-                                        className="float-right"
-                                        to="/user/:uid/website/:wid"
-                                    >
-                                        <i className="fas fa-cog" />
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/user/:uid/website/:wid/page">
-                                        Blogging App
-                                    </Link>
-                                    <Link
-                                        className="float-right"
-                                        to="/user/:uid/website/:wid"
-                                    >
-                                        <i className="fas fa-cog" />
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/user/:uid/website/:wid/page">
-                                        Script Testing App
-                                    </Link>
-                                    <Link
-                                        className="float-right"
-                                        to="/user/:uid/website/:wid"
-                                    >
-                                        <i className="fas fa-cog" />
-                                    </Link>
-                                </li>
-                            </ul>
+                            <List items={websites} type="website" />
                         </div>
                     </div>
                     <div className="col-sm-8">
