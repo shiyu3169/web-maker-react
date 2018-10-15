@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from "axios";
 // User Components
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
@@ -18,7 +19,15 @@ import WidgetChooser from "./components/widget/WidgetChooser";
 import WidgetEdit from "./components/widget/WidgetEdit";
 // Layout
 import Footer from "./components/layout/Footer";
+
 export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: 0
+        };
+    }
+
     render() {
         return (
             <div>
