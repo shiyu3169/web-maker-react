@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./store";
 // User Components
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
@@ -30,7 +31,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <Provider store={store}>
                 <Router>
                     <div>
                         <Switch>
@@ -99,7 +100,7 @@ export default class App extends Component {
                         <Footer />
                     </div>
                 </Router>
-            </div>
+            </Provider>
         );
     }
 }

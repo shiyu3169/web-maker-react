@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InputGroup from "../layout/InputGroup";
 import axios from "axios";
+import { connect } from "react-redux";
+import { getUser } from "../../actions/userActions";
+import PropTypes from "prop-types";
 
 class Profile extends Component {
     state = {
@@ -162,4 +165,16 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+Profile.PropTypes = {
+    getUser: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+export default connect(
+    mapStateToProps,
+    { getUser }
+)(Profile);

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InputGroup from "../layout/InputGroup";
 import axios from "axios";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class Login extends Component {
     state = {

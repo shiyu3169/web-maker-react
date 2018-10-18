@@ -1,26 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InputGroup from "../layout/InputGroup";
-import axios from "axios";
+import { connect } from "react-redux";
+import { addUser } from "../../actions/userActions";
+import PropTypes from "prop-types";
 
-export default class Register extends Component {
+class Register extends Component {
     state = {
         username: "",
         password: "",
-        verifyPassword: "",
-        errors: {}
-    };
-
-    register = async user => {
-        const res = await axios.get(`/api/user?username=${user.username}`);
-        if (res.data) {
-            this.setState({
-                errors: { match: "Username is taken, please try another one." }
-            });
-        } else {
-            const newRes = await axios.post("/api/register", user);
-            this.props.history.push(`/user/${newRes.data._id}`);
-        }
+        verifyPassword: ""
+        // errors: {}
     };
 
     onChange = e => {
@@ -66,18 +56,25 @@ export default class Register extends Component {
 
         const user = { username, password };
         // fetch request
-        this.register(user);
+        this.props.addUser(user).then(() => {
+            if (!this.props.error.type && this.props.users.length > 0) {
+                this.props.history.push(`/user/${this.props.users[0]._id}`);
+            }
+        });
     };
 
     render() {
-        const { errors } = this.state;
+        const { error } = this.props;
 
         return (
             <div className="container">
                 <h1>Register</h1>
-                {errors.match && (
-                    <div className="alert alert-danger">{errors.match}</div>
-                )}
+                {this.props.error &&
+                    this.props.error.type === "match" && (
+                        <div className="alert alert-danger">
+                            {error.message}
+                        </div>
+                    )}
                 <form onSubmit={this.onSubmit}>
                     <InputGroup
                         name="username"
@@ -85,7 +82,7 @@ export default class Register extends Component {
                         type="text"
                         placeholder="Enter your username..."
                         onChange={this.onChange}
-                        error={errors.username}
+                        // error={errors.username}
                     />
                     <InputGroup
                         name="password"
@@ -93,7 +90,7 @@ export default class Register extends Component {
                         type="password"
                         placeholder="Enter your password..."
                         onChange={this.onChange}
-                        error={errors.password}
+                        // error={errors.password}
                     />
                     <InputGroup
                         name="verifyPassword"
@@ -101,7 +98,7 @@ export default class Register extends Component {
                         type="password"
                         placeholder="Verify your password..."
                         onChange={this.onChange}
-                        error={errors.verifyPassword}
+                        // error={errors.verifyPassword}
                     />
                     <button className="btn btn-primary btn-block">
                         Register
@@ -114,3 +111,19 @@ export default class Register extends Component {
         );
     }
 }
+
+Register.propTypes = {
+    addUser: PropTypes.func.isRequired,
+    error: PropTypes.object.isRequired,
+    users: PropTypes.array.isRequired
+};
+
+const mapStateToProps = state => ({
+    error: state.error.error,
+    users: state.user.users
+});
+
+export default connect(
+    mapStateToProps,
+    { addUser }
+)(Register);
